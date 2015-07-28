@@ -19,7 +19,7 @@ yeni app ekle.
 
 ## 2. Client configuration
 
-`config/initializers/devise.rb` dosyasını bul ve,
+`config/initializers/devise.rb` dosyasını bul ve güncelle,
 
 ```ruby
 config.omniauth :doorkeeper,  DOORKEEPER_APP_ID, DOORKEEPER_APP_SECRET, :client_options =>  {:site => DOORKEEPER_APP_URL}
