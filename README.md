@@ -1,3 +1,30 @@
+# Seyyah Not
+## 1. Provider'da new app
+
+http://localhost:4000/users/sign_in
+user: user@example.com
+pass: doorkeeper
+
+http://localhost:4000/oauth/applications/new
+
+Application: test
+Callback url: http://localhost:3000/users/auth/doorkeeper/callback
+
+Application Id: ace08caa76a8755b1aba5ec1750dc00b31625b1c1fe7c54e73c41a6d04707acb
+
+Secret: 4a2cd7d71c7fb195b41b99c8dbe89f708891044a1cb055cb8984f4974e2ea86e
+
+
+## 2. Client configuration
+
+config/initializers/devise.rb
+
+config.omniauth :doorkeeper,  DOORKEEPER_APP_ID, DOORKEEPER_APP_SECRET, :client_options =>  {:site => DOORKEEPER_APP_URL}
+
+http://localhost:3000/
+
+Sign in with OAuth 2 provider=> http://localhost:3000/users/auth/doorkeeper
+
 # Doorkeeper Provider App
 
 [![Build Status](https://secure.travis-ci.org/applicake/doorkeeper-provider-app.png)](http://travis-ci.org/applicake/doorkeeper-provider-app)
